@@ -7,7 +7,7 @@ export default function Sidebar() {
     <nav className="hidden sm:flex flex-col sticky top-0 p-3">
      <div className="realtive h-full">
       <div className='py-3'>
-      <Image src={'/company-logo.jpg'} alt="social-logo" width={120} height={48}/>
+      <Image src={'/assets/company-logo.jpg'} alt="social-logo" width={120} height={48}/>
       </div>
       <ul>
         <SidebarLink Icon ={HomeIcon} text="Home" />
@@ -17,7 +17,7 @@ export default function Sidebar() {
         <SidebarLink Icon={BookmarkIcon} text="Bookmarks" />
         <SidebarLink Icon={UserIcon} text="Profile" />
         <SidebarLink Icon={EllipsisHorizontalCircleIcon} text="More" />
-        <button className="hidden xl:block bg-[#F4AF01] w-[200px] h-[52px] rounded-full text-white font-medium corsor-pointer shadow-md mt-2">Facebook</button>
+        <button className="hidden xl:block bg-[#F4AF01] w-[200px] h-[52px] rounded-full text-white font-medium corsor-pointer shadow-md mt-2">Bubbles</button>
       </ul>
       </div> 
       <div>User Info</div>
@@ -35,8 +35,8 @@ interface SidebarLinkProps{
 
 function SidebarLink({text,Icon}:SidebarLinkProps){
   return (
-  <li className="flex items-center text-l mb-2 space-x-3 p-2.5">
-     <Icon className="h-6" />
+  <li className="flex items-center text-xl mb-2 space-x-3 p-2.5">
+     <Icon className="h-7" />
      <span className='hidden xl:block'>{text}</span>
   </li>
   )
