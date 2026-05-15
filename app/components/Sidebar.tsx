@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Sidebar() {
   return (
-    <nav className="hidden sm:flex flex-col sticky top-0 p-3">
+    <nav className="h-screen hidden sm:flex flex-col sticky top-0 p-3 xl:ml-20 xl:mr-10">
      <div className="realtive h-full">
       <div className='py-3'>
       <Image src={'/assets/company-logo.jpg'} alt="social-logo" width={120} height={48}/>
