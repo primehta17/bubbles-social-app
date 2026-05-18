@@ -1,11 +1,12 @@
 import React from 'react';
 import { HomeIcon, HashtagIcon, BellIcon, UserIcon, BookmarkIcon, InboxIcon, EllipsisHorizontalCircleIcon } from '@heroicons/react/24/outline';
 import Image from "next/image";
+import SidebarUserInfo from './SidebarUserInfo';
 
 export default function Sidebar() {
   return (
     <nav className="h-screen hidden sm:flex flex-col sticky top-0 p-3 xl:ml-20 xl:mr-10">
-     <div className="realtive h-full">
+     <div className="realtive h-full flex flex-col items-center">
       <div className='py-3'>
       <Image src={'/assets/company-logo.jpg'} alt="social-logo" width={120} height={48}/>
       </div>
@@ -20,7 +21,7 @@ export default function Sidebar() {
         <button className="hidden xl:block bg-[#F4AF01] w-[200px] h-[52px] rounded-full text-white font-medium corsor-pointer shadow-md mt-2">Bubbles</button>
       </ul>
       </div> 
-      <div>User Info</div>
+      <SidebarUserInfo />
     </nav>
   )
 }

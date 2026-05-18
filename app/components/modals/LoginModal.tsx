@@ -24,7 +24,7 @@ function LoginModal() {
 
   const dispatch:AppDispatch = useDispatch()
   return (
-    <div>
+    <div className='w-full'>
       <button className='w-full h-[47px] md:w-[90px] md:h-[40px] text-md md:text-sm font-bold bg-white rounded-full' onClick={()=>{dispatch(openLoginModal())}}> Log In </button>
       <Modal open={isOpen} onClose={()=>dispatch(closeLoginModal())} className='flex justify-center items-center'>
         <div className="w-full h-full sm:w-[600px] sm:h-fit bg-white sm:rounded-xl"> 
