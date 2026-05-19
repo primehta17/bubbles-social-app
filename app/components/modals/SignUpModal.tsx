@@ -6,7 +6,7 @@ import { RootState,AppDispatch } from '@/app/redux/store'
 import { closeSignUpModal, openSignUpModal } from '@/app/redux/slices/modalSlice';
 import { EyeIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { EyeSlashIcon } from '@heroicons/react/16/solid';
-import { createUserWithEmailAndPassword, onAuthStateChanged,updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged,updateProfile,signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/firebase';
 import { signInUser } from '@/app/redux/slices/userSlice';
 
@@ -67,6 +67,10 @@ function SignUpModal() {
     return unsubscribe;
   },[]);
 
+
+  async function handleGuestLogIn(){
+    await signInWithEmailAndPassword(auth ,"guest1234@gmail.com","123454321")
+  }
   return (
     <div className='w-full'>
       <button className='w-full h-[47px] md:w-[90px] md:h-[40px] text-md md:text-sm font-bold bg-white rounded-full' onClick={()=>{dispatch(openSignUpModal())}}> Sign Up</button>
@@ -90,7 +94,7 @@ function SignUpModal() {
               onClick={()=>handleSignUp()}>Sign Up</button>
               {/* <span className='flex justify-center'> Or </span> */}
               <span className='mb-5 text-sm text-center block'> Or </span>
-              <button className='w-full shadow-md h-[50px] rounded-full text-white bg-[#F4AF01]'>Log In as Guest</button>
+              <button className='w-full shadow-md h-[50px] rounded-full text-white bg-[#F4AF01]' onClick={()=>handleGuestLogIn()}>Log In as Guest</button>
             </div>
           </div>
         </div>

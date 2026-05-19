@@ -7,6 +7,7 @@ import { auth } from "@/firebase";
 import { signOutUser } from '../redux/slices/userSlice';
 import { useSelector } from 'react-redux';
 import { AppDispatch,RootState } from '../redux/store';
+import { closeLoginModal, closeSignUpModal } from '../redux/slices/modalSlice';
 
 function SidebarUserInfo() {
   const dispatch:AppDispatch = useDispatch();
@@ -15,6 +16,8 @@ function SidebarUserInfo() {
   async function handleSignOut(){
       await signOut(auth);
       dispatch(signOutUser());
+      dispatch(closeLoginModal())
+      dispatch(closeSignUpModal())
   }
 
   return (
