@@ -35,7 +35,7 @@ export default function PostInput() {
                 <CalendarDaysIcon className='w-[22px] h-[22px] text-[#F4AF01]'/>
                 <MapPinIcon className='w-[22px] h-[22px] text-[#F4AF01]'/>
               </div> 
-              <button className="rounded-full bg-[#F4AF01] w-[80px] h-[36px] text-white text-sm corsor-pointer"  onClick={()=>sendPosts()}>Posts</button>
+              <button className="rounded-full bg-[#F4AF01] w-[80px] h-[36px] text-white text-sm cursor-pointer"  onClick={()=>sendPosts()}>Posts</button>
             </div>
         </div>
     </div>
