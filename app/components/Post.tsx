@@ -3,13 +3,14 @@ import Image from 'next/image';
 import { ChartBarIcon, ChatBubbleOvalLeftEllipsisIcon, HeartIcon, ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import { DocumentData, Timestamp } from 'firebase/firestore';
 import Moment from 'react-moment';
-import { openCommentModal } from '../redux/slices/modalSlice';
+import { openCommentModal, setCommentDetails } from '../redux/slices/modalSlice';
 import { useDispatch } from 'react-redux';
 
 interface PostProps{
-  data:DocumentData
+  data:DocumentData;
+  id:string;
 }
-export default function Post({data}:PostProps) {
+export default function Post({data, id}:PostProps) {
   const dispatch = useDispatch()
   return (
     <div className='border-b border-gray-100'>
@@ -17,7 +18,14 @@ export default function Post({data}:PostProps) {
       <div className="ml-16 p-3 flex space-x-14">
         <div className='relative'>
         <ChatBubbleOvalLeftEllipsisIcon className='w-[22px] h-[22px] cursor-pointer hover:text-[#F4AF01] transition'
-        onClick={()=> dispatch(openCommentModal())} />
+        onClick={()=> {
+          dispatch(setCommentDetails({
+              name: data.name,
+              username: data.username,
+              id: id,
+              text: data.text,
+          }))
+          dispatch(openCommentModal())}} />
         <span className='absolute text-xs top-1 -right-3'>2</span>
         </div>
         <div className='relative'>

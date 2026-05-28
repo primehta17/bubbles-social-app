@@ -2,7 +2,7 @@
 import React,{useState} from 'react';
 import Image from 'next/image';
 import { CalendarDaysIcon, ChartBarIcon, FaceSmileIcon, MapPinIcon, PhotoIcon } from '@heroicons/react/24/outline';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { addDoc, arrayUnion, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
@@ -14,6 +14,7 @@ interface PostInputProps {
 export default function PostInput({insideModal}: PostInputProps) {
   const [text, setText] = useState('');
   const user = useSelector((state:RootState)=>state.user);
+  const commentDetails = useSelector((state:RootState)=>state.modals.commentPostDetails)
 
   async function sendPosts(){
     await addDoc(collection(db,'socialPost'),{
@@ -25,6 +26,17 @@ export default function PostInput({insideModal}: PostInputProps) {
       comments:[]
      });
      setText('')
+  }
+
+  async function sendComment(){
+    const postRef = doc(db, "socialPost", commentDetails.id);
+    await updateDoc(postRef,{
+      comments:arrayUnion({
+        name: user.name,
+        username: user.username,
+        text: text,
+      })
+    })
   }
   return (
     <>
@@ -40,7 +52,7 @@ export default function PostInput({insideModal}: PostInputProps) {
                 <CalendarDaysIcon className='w-[22px] h-[22px] text-[#F4AF01]'/>
                 <MapPinIcon className='w-[22px] h-[22px] text-[#F4AF01]'/>
               </div> 
-              <button className="rounded-full bg-[#F4AF01] w-[80px] h-[36px] text-white text-sm cursor-pointer"  onClick={()=>sendPosts()}>Posts</button>
+              <button className="rounded-full bg-[#F4AF01] w-[80px] h-[36px] text-white text-sm cursor-pointer"  onClick={()=> insideModal ?sendComment(): sendPosts()}>Posts</button>
             </div>
         </div>
     </div>

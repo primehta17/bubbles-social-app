@@ -10,6 +10,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function CommentsModal() {
   const open = useSelector((state:RootState) => state.modals.commentModalOpen);
+  const commentDetails = useSelector((state: RootState)=> state.modals.commentPostDetails)
   const dispatch = useDispatch()
 
   return (
@@ -18,7 +19,11 @@ function CommentsModal() {
         <div className='w-full w-full sm:w-[400px] sm:h-fit bg-white sm:rounded-xl outline-none relative'>
         <XMarkIcon className='w-7 mt-5 ms-5 cursor-pointer' onClick={()=>dispatch(closeCommentModal())}/>
           <div className="pt-5 pb-10 px-0 sm:px-5 flex flex-col">
-            <PostHeader name="Guest" username="hulk" text="apple" replyTo="iammusa"/>
+            <PostHeader 
+            name={commentDetails.name} 
+            username={commentDetails.username}
+            text={commentDetails.text}
+            replyTo={commentDetails.username}/>
             <div className='mt-4'>
               <PostInput 
               insideModal={true}
