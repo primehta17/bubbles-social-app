@@ -75,7 +75,7 @@ function SignUpModal() {
     <div className='w-full'>
       <button className='w-full h-[47px] md:w-[90px] md:h-[40px] text-md md:text-sm font-bold bg-white rounded-full' onClick={()=>{dispatch(openSignUpModal())}}> Sign Up</button>
       <Modal open={isOpen} onClose={()=>dispatch(closeSignUpModal())} className='flex justify-center items-center'>
-        <div className="w-full h-full sm:w-[600px] sm:h-fit bg-white sm:rounded-xl"> 
+        <div className="w-full h-full sm:w-[600px] sm:h-fit bg-white sm:rounded-xl outline-none"> 
           <XMarkIcon className='w-7 mt-5 ms-5 cursor-pointer' onClick={()=>dispatch(closeSignUpModal())}/>
           <div className='pt-10 pb-20 px-4 sm:px-20'>
             <h2 className='font-bold text-3xl mb-10'>Create your Account</h2>

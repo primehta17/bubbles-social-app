@@ -38,7 +38,7 @@ function LoginModal() {
     <div className='w-full'>
       <button className='w-full h-[47px] md:w-[90px] md:h-[40px] text-md md:text-sm font-bold bg-white rounded-full' onClick={()=>{dispatch(openLoginModal())}}> Log In </button>
       <Modal open={isOpen} onClose={()=>dispatch(closeLoginModal())} className='flex justify-center items-center'>
-        <div className="w-full h-full sm:w-[600px] sm:h-fit bg-white sm:rounded-xl"> 
+        <div className="w-full h-full sm:w-[600px] sm:h-fit bg-white sm:rounded-xl outline-none"> 
           <XMarkIcon className='w-7 mt-5 ms-5 cursor-pointer' onClick={()=>dispatch(closeLoginModal())}/>
           <div className='pt-10 pb-20 px-4 sm:px-20'>
             <h2 className='font-bold text-3xl mb-10'>Log In To Bubbles</h2>

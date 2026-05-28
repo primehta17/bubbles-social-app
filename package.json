@@ -17,6 +17,7 @@
     "next": "15.5.18",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-moment": "^2.0.2",
     "react-redux": "^9.3.0"
   },
   "devDependencies": {

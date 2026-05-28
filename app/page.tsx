@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import PostFeed from "./components/PostFeed";
 import Widgets from "./components/Widgets";
 import SignUpPrompt from "./components/SignUpPrompt";
+import CommentsModal from "./components/modals/CommentsModal";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
     <PostFeed/>
     <Widgets/>
    </div>
+   <CommentsModal />
    <SignUpPrompt/>
    </>
   );
