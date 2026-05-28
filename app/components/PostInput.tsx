@@ -4,8 +4,9 @@ import Image from 'next/image';
 import { CalendarDaysIcon, ChartBarIcon, FaceSmileIcon, MapPinIcon, PhotoIcon } from '@heroicons/react/24/outline';
 import { addDoc, arrayUnion, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
+import { closeCommentModal } from '../redux/slices/modalSlice';
 
 interface PostInputProps {
   insideModal?: boolean
@@ -15,6 +16,7 @@ export default function PostInput({insideModal}: PostInputProps) {
   const [text, setText] = useState('');
   const user = useSelector((state:RootState)=>state.user);
   const commentDetails = useSelector((state:RootState)=>state.modals.commentPostDetails)
+  const dispatch = useDispatch();
 
   async function sendPosts(){
     await addDoc(collection(db,'socialPost'),{
@@ -37,6 +39,8 @@ export default function PostInput({insideModal}: PostInputProps) {
         text: text,
       })
     })
+    setText('')
+    dispatch(closeCommentModal());
   }
   return (
     <>

@@ -1,3 +1,4 @@
+'use client'
 import React, { Profiler } from 'react';
 import Image from 'next/image';
 import { ChartBarIcon, ChatBubbleOvalLeftEllipsisIcon, HeartIcon, ArrowUpTrayIcon } from '@heroicons/react/24/outline';
@@ -57,7 +58,7 @@ export function PostHeader({ name,username, timestamp,text, replyTo}: PostHeader
     <Image src="/profile.jpg" width={46} height={46} alt="profile-photo" className='w-11 h-11 z-10 bg-white' />
      <div className='text-[15px] flex flex-col space-y-1.5'>
        <div className='flex space-x-1.5 text-[15px text-[#707E89]'>
-         <span className='font-bold text-[#0F1419] whitespace-nowrap inline-block max-w-[60px] min-w-[400px]:max-w-[100px] min-[500px]:max-w-[140px] sm:max-w-[160px] overflow-hidden text-ellipsis'>{name}</span>
+         <span className='font-bold text-[#0F1419] inline-block whitespace-nowrap max-w-[60px] min-w-[400px]:max-w-[100px] min-[500px]:max-w-[140px] sm:max-w-[160px] overflow-hidden text-ellipsis'>{name}</span>
          <span className='inline-block whitespace-nowrap overflow-hidden text-ellipsis max-w-[60px] min-w-[400px]:max-w-[100px] min-[500px]:max-w-[140px] sm:max-w-[160px]'>@{username}</span>
          {
           timestamp && (

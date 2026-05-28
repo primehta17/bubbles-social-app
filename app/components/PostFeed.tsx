@@ -15,7 +15,7 @@ function PostFeed(){
         setPosts(snapshotDocs)
       })
       return unsubscribe
-  },[])
+  },[]);
   return (
     <div  className="flex-grow max-w-2xl border-x border-gray-100">
       <div className="py-4 px-3 text-lg sm:text-xl stickt top-0 z-50 bg-white bg-opacity-80 backdrop-blur-sm border-b border-gray-100">Home</div>
