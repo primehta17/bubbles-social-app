@@ -19,8 +19,8 @@ export default function Follow() {
         <div className='flex space-x-3'>
             <Image src="/assets/company-logo.jpg" alt="profile_photo" width={44} height={44} className='w-14 h-14 rounded-full'/>
             <div className='flex flex-col text-sm'>
-                <span className='font-bold'>Kim crystal</span>
-                <span>@kimcrystal</span>
+                <span className='font-bold'>Poppy Diesel</span>
+                <span>@poppydiesel</span>
             </div>
           </div>
             <button className="bg-[#0F1419] text-white text-sm border-radius-2 rounded-full w-[72px] h-[40px]">Follow</button>
@@ -29,8 +29,8 @@ export default function Follow() {
         <div className='flex space-x-3'>
             <Image src="/assets/company-logo.jpg" alt="profile_photo" width={44} height={44} className='w-14 h-14 rounded-full'/>
             <div className='flex flex-col text-sm'>
-                <span className='font-bold'>Kim crystal</span>
-                <span>@kimcrystal</span>
+                <span className='font-bold'>John Khan</span>
+                <span>@johnkhan</span>
             </div>
           </div>
             <button className="bg-[#0F1419] text-white text-sm border-radius-2 rounded-full w-[72px] h-[40px]">Follow</button>

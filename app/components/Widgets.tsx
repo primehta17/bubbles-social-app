@@ -25,24 +25,24 @@ export default function Widgets() {
             <span>Trending in Australia</span>
             <EllipsisHorizontalIcon className='w-[20px]'/>
         </div>
-          <span className='font-bold text-sm'>#ReactJS</span>
-          <span className='text-[#536471] text-xs'>240k Bubbles</span>
+          <span className='font-bold text-sm'>#NextJs</span>
+          <span className='text-[#536471] text-xs'>170k Bubbles</span>
         </div>
         <div className='flex flex-col py-3 space-y-0.5'>
         <div className="flex justify-between text-[#536471] text-[13px]">
             <span>Trending in Australia</span>
             <EllipsisHorizontalIcon className='w-[20px]'/>
         </div>
-          <span className='font-bold text-sm'>#ReactJS</span>
-          <span className='text-[#536471] text-xs'>240k Bubbles</span>
+          <span className='font-bold text-sm'>#NodeJS</span>
+          <span className='text-[#536471] text-xs'>200k Bubbles</span>
         </div>
         <div className='flex flex-col py-3 space-y-0.5'>
         <div className="flex justify-between text-[#536471] text-[13px]">
             <span>Trending in Australia</span>
             <EllipsisHorizontalIcon className='w-[20px]'/>
         </div>
-          <span className='font-bold text-sm'>#ReactJS</span>
-          <span className='text-[#536471] text-xs'>240k Bubbles</span>
+          <span className='font-bold text-sm'>#NestJS</span>
+          <span className='text-[#536471] text-xs'>140k Bubbles</span>
         </div>
       </div>
       <Follow />
