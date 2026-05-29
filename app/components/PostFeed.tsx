@@ -4,15 +4,21 @@ import PostInput from './PostInput';
 import Post from './Post';
 import { collection, DocumentData, onSnapshot, orderBy, query, QueryDocumentSnapshot } from 'firebase/firestore';
 import { db } from '@/firebase';
+import { useDispatch } from 'react-redux';
+import { closeLoadingScreen } from '../redux/slices/loadingSlice';
 
 function PostFeed(){
-  const [posts, setPosts] = useState<QueryDocumentSnapshot<DocumentData, DocumentData>[]>([])
+  const [posts, setPosts] = useState<QueryDocumentSnapshot<DocumentData, DocumentData>[]>([]);
+  const dispatch = useDispatch()
+  
+
   useEffect(()=>{
       const q=query(collection(db, "socialPost"), orderBy("timestamp", "desc"))
    console.log(q)
       const unsubscribe = onSnapshot(q,(snapshot)=>{
         const snapshotDocs =snapshot.docs
         setPosts(snapshotDocs)
+        dispatch(closeLoadingScreen())
       })
       return unsubscribe
   },[]);

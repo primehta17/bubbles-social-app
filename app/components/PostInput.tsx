@@ -6,7 +6,7 @@ import { addDoc, arrayUnion, collection, doc, serverTimestamp, updateDoc } from 
 import { db } from '@/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
-import { closeCommentModal } from '../redux/slices/modalSlice';
+import { closeCommentModal, openLoginModal } from '../redux/slices/modalSlice';
 
 interface PostInputProps {
   insideModal?: boolean
@@ -19,6 +19,12 @@ export default function PostInput({insideModal}: PostInputProps) {
   const dispatch = useDispatch();
 
   async function sendPosts(){
+
+    if(!user.username){
+      dispatch(openLoginModal())
+      return;
+    }
+
     await addDoc(collection(db,'socialPost'),{
       text:text,
       name:user.name,

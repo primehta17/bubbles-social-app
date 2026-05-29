@@ -10,7 +10,7 @@ export default function LoadingScreen() {
       state.loading.loadingScreenOpen
   )
   return (
-    <div className={`fixed top-0 left-0 bottom-0 right-0 bg-white flex items-center justify-center ${loadingScreenOpen ? "opacity-100 z-50":"opacity-0 -z-50"}`}>
+    <div className={`fixed top-0 left-0 bottom-0 right-0 bg-white flex items-center justify-center transition ${loadingScreenOpen ? "opacity-100 z-50":"opacity-0 -z-50"}`}>
        <div className='flex flex-col items-center'>
         <Image src={'/assets/company-logo.jpg'} width={120} height={120} alt="Bubble Logo" className='mb-5'/>
 

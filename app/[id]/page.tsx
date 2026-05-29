@@ -68,8 +68,8 @@ export default async function page({params}:PageProps) {
             <Comment key={index} name={comment.name} username={comment.username} text={comment.text}/>
           ))}
       </div>
+      <Widgets/>
     </div>
-    <Widgets/>
    <SignUpPrompt/>
    </>
   );
