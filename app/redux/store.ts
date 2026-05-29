@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import modalSlice from "./slices/modalSlice";
-import userSlice from "./slices/userSlice"
+import userSlice from "./slices/userSlice";
+import loadingSlice from "./slices/loadingSlice"
 export const store =configureStore({
   reducer:{
     modals:modalSlice,
-    user:userSlice
+    user:userSlice,
+    loading:loadingSlice,
   }
 })
 // Infer the `RootState` and `AppDispatch` types from the store itself

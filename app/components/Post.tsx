@@ -5,7 +5,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import { ChartBarIcon, ChatBubbleOvalLeftEllipsisIcon, HeartIcon, ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import { arrayRemove, arrayUnion, doc, DocumentData, Timestamp, updateDoc } from 'firebase/firestore';
 import Moment from 'react-moment';
-import { openCommentModal, setCommentDetails } from '../redux/slices/modalSlice';
+import { openCommentModal, openLoginModal, setCommentDetails } from '../redux/slices/modalSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 import { RootState } from '../redux/store';
@@ -20,6 +20,10 @@ export default function Post({data, id}:PostProps) {
   const user = useSelector((state:RootState)=> state.user)
 
   async function likePost(){
+    if(!user.username){
+      dispatch(openLoginModal())
+      return;
+    }
     const postRef = doc(db, "socialPost", id);
 
     if(data.likes.includes(user.uid)){
@@ -42,6 +46,12 @@ export default function Post({data, id}:PostProps) {
         <div className='relative'>
         <ChatBubbleOvalLeftEllipsisIcon className='w-[22px] h-[22px] cursor-pointer hover:text-[#F4AF01] transition'
         onClick={()=> {
+
+          if(!user.username){
+            dispatch(openLoginModal())
+            return;
+          }
+          
           dispatch(setCommentDetails({
               name: data.name,
               username: data.username,
@@ -49,7 +59,10 @@ export default function Post({data, id}:PostProps) {
               text: data.text,
           }))
           dispatch(openCommentModal())}} />
-        <span className='absolute text-xs top-1 -right-3'>2</span>
+      {
+        data.comments.length >0 &&
+          <span className='absolute text-xs top-1 -right-3'>{data.comments.length}</span>
+      }
         </div>
         <div className='relative'>
       { data.likes.includes(user.uid) ? 
@@ -58,7 +71,11 @@ export default function Post({data, id}:PostProps) {
       <HeartIcon className='w-[22px] h-[22px] hover:text-pink-500 transition'
         onClick={() => likePost()}
         />}
-        <span className='absolute text-xs top-1 -right-3'>2</span>
+       { 
+        data.likes.length > 0 &&
+        <span className='absolute text-xs top-1 -right-3'>
+        {data.likes.length}
+        </span>}
       </div>
         <div className='relative'>
         <ChartBarIcon className='w-[22px] h-[22px] hover:text-[#F4AF01] transition cursor-not-allowed'/>
