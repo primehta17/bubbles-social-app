@@ -8,7 +8,7 @@ export default function Widgets() {
     <div className='p-4 hidden lg:flex flex-col space-y-4 w-[400px] ps-10'>
       <div className='flex m-3 bg-[#EFF3F4] text-[#89959D] rounded-full pl-5 space-x-3 items-center h-[44px]'>
         <MagnifyingGlassIcon className='w-[20px] h-[20px]'/>
-        <input type="text" placeholder="Seach In Comapany" className='bg-transparent outline-none '/>
+        <input type="text" placeholder="Seach In Company" className='bg-transparent outline-none '/>
       </div>
       <div className="m-3 bg-[#EFF3F4] rounded-xl p-4">
         <h2 className='font-bold text-xl mb-3'>What's Happening?</h2>
