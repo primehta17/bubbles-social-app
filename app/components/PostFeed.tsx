@@ -14,7 +14,6 @@ function PostFeed(){
 
   useEffect(()=>{
       const q=query(collection(db, "socialPost"), orderBy("timestamp", "desc"))
-   console.log(q)
       const unsubscribe = onSnapshot(q,(snapshot)=>{
         const snapshotDocs =snapshot.docs
         setPosts(snapshotDocs)

@@ -9,7 +9,6 @@ export default function SignUpPrompt() {
   const name= useSelector((state: RootState)=>
     state.user.name
   )
-  console.log(name);
   return (
     !name &&
     <div className='fixed flex justify-center lg:justify-between items-center bg-[#F4AF01] w-full h-[80px]  bottom-0 md:space-x-5 lg:px-20 xl:px-40 2xl:px-80'>

@@ -51,7 +51,6 @@ function SignUpModal() {
 
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth,(currentUser)=>{
-      // console.log(currentUser);
       if(!currentUser) return;
       //Handle Redux Actions
 

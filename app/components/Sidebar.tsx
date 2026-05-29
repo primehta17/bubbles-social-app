@@ -36,8 +36,8 @@ interface SidebarLinkProps{
 
 function SidebarLink({text,Icon}:SidebarLinkProps){
   return (
-  <li className="flex items-center text-xl mb-2 space-x-3 p-2.5">
-     <Icon className="h-7" />
+  <li className="flex items-center xl:justify-start lg:justify-center md:justify-center text-l mb-2 space-x-3 p-2.5">
+     <Icon className="h-6" />
      <span className='hidden xl:block'>{text}</span>
   </li>
   )
