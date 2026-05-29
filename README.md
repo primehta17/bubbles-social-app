@@ -11,6 +11,14 @@ The project is designed to deliver a smooth social media experience with modern 
 
 ---
 
+# 🎥 Demo Video
+
+Watch the project demo here:
+
+[▶️ Watch Demo] (https://drive.google.com/file/d/1YuyOBSmwSxzcuX0jzSz--s7JmtUI9xdR/view?usp=sharing)
+
+---
+
 ## ✨ Features
 
 ✅ User Authentication & Authorization
@@ -68,7 +76,7 @@ git clone https://github.com/primehta17/bubbles-social-app.git
 ## 📁 Navigate to Project
 
 ```bash id="lt94c9"
-cd <project-folder-name>
+cd bubbles-social-app
 ```
 
 ## 📦 Install Dependencies

@@ -21,7 +21,7 @@ function SidebarUserInfo() {
   }
 
   return (
-    <div className='absolute bottom-12 flex items-center justify-start space-x-2 hover:bg-gray-200 xl:p-3 hover:bg-opacity-10 rounded-full transition cursor-pointer w-fit xl:w-[240px]'
+    <div className='absolute bottom-12 flex items-center justify-start space-x-2 hover:bg-gray-200 xl:p-4 hover:bg-opacity-10 rounded-full transition cursor-pointer w-fit xl:w-[240px]'
     onClick={()=>handleSignOut()}>
     <Image src={"/assets/company-logo.jpg" } alt="user Profile Picture" width='36' height='36' className='w-9 h-9 rounded-full transition cursor-pointer'/>
     
